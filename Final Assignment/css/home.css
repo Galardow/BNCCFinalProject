@@ -1,0 +1,308 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+span {
+    color: rgb(0, 140, 255);
+}
+
+#hero {
+    background-color: rgb(0, 0, 45);
+    height: 100vh;
+}
+
+#navbar {
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: right;
+    gap: 2rem;
+    align-items: center;
+    z-index: 9999;
+}
+
+#nav-menu {
+    font-weight: bold;
+}
+
+#nav-menu a, .menu a {
+    text-decoration: none;
+    color: white;
+}
+#nav-menu a:hover {
+    color: rgb(0, 140, 255);
+    transition: 0.3s;
+}
+#nav-menu a::after {
+    content: "";
+    display: block;
+    border-bottom: 0.1rem solid rgb(0, 140, 255);
+    padding-bottom: 0.5rem;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+#nav-menu a:hover::after {
+    transform: scaleX(0.5);
+}
+
+.menu {
+    display: none;
+}
+
+#body {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#tagline {
+    display: flex;
+    flex: 1;
+    font-size: 5rem;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
+    flex-direction: column;
+}
+
+#tagline p {
+    color: white;
+    margin-top: 2rem;
+    font-weight: bold;
+    text-align: right;
+    animation: taglinepanimation;
+    animation-duration: 3s;
+}
+@keyframes taglinepanimation {
+    from {
+        transform: translateX(50rem);
+    } to {
+        transform: translateX(0rem);
+    }
+}
+
+button {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+    animation: imganimation;
+    animation-duration: 5s;
+    border-radius: 1rem;
+    background-color: rgb(0, 140, 255);
+    color: white
+}
+button:hover {
+    transition: 0.3s;
+    cursor: pointer;
+    color: black;
+}
+button::after {
+    content: "";
+    display: block;
+    border-bottom: 0.2rem solid black;
+    padding-bottom: 0.5rem;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+button:hover::after {
+    transform: scaleX(0.5);
+}
+
+#image {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex: 1;
+}
+
+img {
+    margin-left: 3rem;
+    height: auto;
+    width: auto;
+    border: 0.5rem solid rgb(0, 140, 255);
+    max-width: 100%;
+    max-height: 85vh;
+    animation: imganimation;
+    animation-duration: 5s;
+}
+@keyframes imganimation {
+    0% {
+        transform: scale(0%);
+    } 60% {
+        transform: scale(0%);
+    } 100% {
+        transform: scale(100%);
+    }
+}
+
+footer {
+    border-top: 0.2rem solid white;
+    background-color: rgb(0, 0, 45);
+    height: 30vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#contact {
+    display: flex;
+    gap: 5rem;
+}
+
+#contact a {
+    color: white;
+    text-decoration: none;
+}
+#contact a:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    #tagline {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #navbar {
+        gap: 1rem;
+    }
+    #body {
+        flex-direction: column;
+    }
+    #tagline {
+        font-size: 3rem;
+        margin: 3rem 0 0 0;
+        justify-content: center;
+    }
+    #tagline p {
+        text-align: center;
+        animation: taglinepanimation;
+        animation-duration: 3s;
+    }
+    @keyframes taglinepanimation {
+        from {
+            transform: translateY(-100rem);
+        } to {
+            transform: translateY(0rem);
+        }
+    }
+    #image {
+        justify-content: center;
+        height: auto;
+        width: auto;
+        max-height: 40vh;
+        max-width: 35vw;
+        margin: 4rem 0 0 0;
+    }
+    button {
+        font-size: 1.5rem;
+        padding: 0.7rem;
+    }
+    button::after {
+        padding-bottom: 0.4rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #navbar {
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        gap: 2rem;
+        padding-inline: 3rem;
+    }
+    #navbar.active {
+        background-color: black;
+    }
+    .nav-menu-1, .nav-menu-2, .nav-menu-3, .nav-menu-4, .nav-menu-5 {
+        display: none;
+    }
+    .nav-menu-1.active {
+        display: block;
+    }
+    .nav-menu-2.active {
+        display: block;
+    }
+    .nav-menu-3.active {
+        display: block;
+    }
+    .nav-menu-4.active {
+        display: block;
+    }
+    .nav-menu-5.active {
+        display: block;
+    }
+    .menu {
+        display: block;
+    }
+    #tagline {
+        font-size: 2.5rem;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        border: 0.2rem solid rgb(0, 140, 255);
+    }
+    footer {
+        height: auto;
+        padding: 1rem;
+    }
+    button {
+        font-size: 1rem;
+        padding: 0.3rem;
+    }
+    button::after {
+        padding-bottom: 0.1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #navbar {
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        gap: 2rem;
+        padding-inline: 3rem;
+        font-size: 0.8rem;
+    }
+    #navbar.active {
+        background-color: black;
+    }
+    .nav-menu-1, .nav-menu-2, .nav-menu-3, .nav-menu-4, .nav-menu-5 {
+        display: none;
+    }
+    .nav-menu-1.active {
+        display: block;
+    }
+    .nav-menu-2.active {
+        display: block;
+    }
+    .nav-menu-3.active {
+        display: block;
+    }
+    .nav-menu-4.active {
+        display: block;
+    }
+    .nav-menu-5.active {
+        display: block;
+    }
+    .menu {
+        display: block;
+    }
+    #tagline {
+        font-size: 2rem;
+    }
+    button {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+    }
+    button::after {
+        padding-bottom: 0.3rem;
+    }
+}

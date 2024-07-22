@@ -1,0 +1,340 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+span {
+    color: rgb(0, 140, 255);
+    font-weight: bold;
+}
+
+#hero {
+    background-color: rgb(0, 0, 45);
+    height: 100vh;
+}
+
+#navbar {
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: right;
+    gap: 2rem;
+    align-items: center;
+    z-index: 9999;
+}
+
+#nav-menu {
+    font-weight: bold;
+}
+
+#nav-menu a, .menu a {
+    text-decoration: none;
+    color: white;
+}
+#nav-menu a:hover {
+    color: rgb(0, 140, 255);
+    transition: 0.3s;
+}
+#nav-menu a::after {
+    content: "";
+    display: block;
+    border-bottom: 0.1rem solid rgb(0, 140, 255);
+    padding-bottom: 0.5rem;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+#nav-menu a:hover::after {
+    transform: scaleX(0.5);
+}
+
+.menu {
+    display: none;
+}
+
+#body {
+    display: flex;
+    flex: 1; 
+    justify-content: center;
+    gap: 10rem; 
+}
+
+.image {
+    margin: 2rem;
+    padding: 2rem;
+    border: 0.1rem solid black;
+    background-color: rgba(255, 255, 255, 0.816);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0.5rem 0.5rem 0.5rem rgb(0, 0, 0);
+    max-width: 25rem;
+}
+
+img {
+    height: auto;
+    width: auto;
+    max-height: 50vh;
+    max-width: 50vw;
+}
+
+#eduname {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+
+button {
+    height: 3rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button:hover {
+    cursor: pointer;
+}
+
+#seemore {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: Roboto;
+}
+#seemore::after {
+    content: "";
+    display: block;
+    border-bottom: 0.1rem solid black;
+    padding-bottom: 0.5rem;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+#seemore:hover::after {
+    transform: scaleX(0.5);
+}
+
+.info {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+
+iframe {
+    width: auto;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.moreinfo {
+    font-size: 1.4rem;
+}
+
+footer {
+    border-top: 0.2rem solid white;
+    background-color: rgb(0, 0, 45);
+    height: 30vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#contact {
+    display: flex;
+    gap: 5rem;
+}
+
+#contact a {
+    color: white;
+    text-decoration: none;
+}
+#contact a:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    img {
+        height: auto;
+        width: auto;
+        max-height: 40vh;
+        max-width: 40vw;
+    }
+    #eduname {
+        font-size: 1.6rem;
+    }
+    .moreinfo {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #navbar {
+        gap: 1rem;
+    }
+    #body {
+        gap: 2rem;
+    }
+    img {
+        height: auto;
+        width: auto;
+        max-height: 35vh;
+        max-width: 35vw;
+    }
+    #eduname {
+        font-size: 1.5rem;
+    }
+    button {
+        height: 2.5rem;
+    }
+    #seemore {
+        font-size: 1rem;
+    }
+    #seemore::after {
+        content: "";
+        display: block;
+        border-bottom: 0.1rem solid black;
+        padding-bottom: 0.4rem;
+        transform: scaleX(0);
+        transition: 0.2s linear;
+    }
+    #seemore:hover::after {
+        transform: scaleX(0.5);
+    }
+    .moreinfo {
+        font-size: 1.2rem
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #navbar {
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        gap: 2rem;
+        padding-inline: 3rem;
+    }
+    #navbar.active {
+        background-color: black;
+    }
+    .nav-menu-1, .nav-menu-2, .nav-menu-3, .nav-menu-4, .nav-menu-5 {
+        display: none;
+    }
+    .nav-menu-1.active {
+        display: block;
+    }
+    .nav-menu-2.active {
+        display: block;
+    }
+    .nav-menu-3.active {
+        display: block;
+    }
+    .nav-menu-4.active {
+        display: block;
+    }
+    .nav-menu-5.active {
+        display: block;
+    }
+    .menu {
+        display: block;
+    }
+    #body {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+    .image {
+        margin: 0;
+    }
+    img {
+        width: auto;
+        height: auto;
+        max-height: 22vh;
+        max-width: 22vw;
+    }
+    #eduname {
+        font-size: 0.9rem;
+    }
+    button {
+        height: 1.5rem;
+    }
+    #seemore {
+        font-size: 0.7rem;
+    }
+    #seemore::after {
+        content: "";
+        display: block;
+        border-bottom: 0.1rem solid black;
+        padding-bottom: 0.2rem;
+        transform: scaleX(0);
+        transition: 0.2s linear;
+    }
+    #seemore:hover::after {
+        transform: scaleX(0.5);
+    }
+    footer {
+        height: auto;
+        padding: 1rem;
+    }
+    .moreinfo {
+        font-size: 0.6rem
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #navbar {
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        gap: 2rem;
+        padding-inline: 3rem;
+        font-size: 0.8rem;
+    }
+    #navbar.active {
+        background-color: black;
+    }
+    .nav-menu-1, .nav-menu-2, .nav-menu-3, .nav-menu-4, .nav-menu-5 {
+        display: none;
+    }
+    .nav-menu-1.active {
+        display: block;
+    }
+    .nav-menu-2.active {
+        display: block;
+    }
+    .nav-menu-3.active {
+        display: block;
+    }
+    .nav-menu-4.active {
+        display: block;
+    }
+    .nav-menu-5.active {
+        display: block;
+    }
+    .menu {
+        display: block;
+    }
+    #body {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .image {
+        justify-content: center;
+        align-items: center;
+    }
+    img {
+        height: auto;
+        width: auto;
+        max-width: 30vw;
+        max-height: 30vh;
+    }
+    button {
+        width: 30vw;
+    }
+    .moreinfo {
+        font-size: 0.6rem
+    }
+}
